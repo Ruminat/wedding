@@ -1,0 +1,36 @@
+@use "/src/styles/var.scss";
+@use "/src/styles/mixin.scss";
+
+.gallery {
+  @include mixin.pageBlock;
+  background: white;
+  color: var.$dark-blue;
+  align-items: center;
+  padding: 0;
+  // max-height: calc(100vh - 96px);
+}
+
+.gallery__content {
+  width: 100%;
+  height: 420px;
+  position: relative;
+}
+
+img.gallery__image {
+  max-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 4px;
+  transform: translate(-50%, -50%);
+}
+
+.gallery__background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  background-image: url("https://downloader.disk.yandex.ru/preview/a27c102800d62914cc2ef06f41093c8a3e13c6c7a35a2603bbbd32f60dc8bf56/6824050e/D0A6uDwH1eWX2aS4X1SoViFj36gY-kG4rCh6qHOzhUN4mKxfF9T8MIs979vRs5kzIbB2hZ0jKnNCrISOvi_DpA%3D%3D?uid=0&filename=IMG_0539.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v3&size=2048x2048");
+  background-size: auto;
+  filter: blur(64px);
+}

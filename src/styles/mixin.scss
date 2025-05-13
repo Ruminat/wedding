@@ -1,0 +1,10 @@
+.page__block {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 64px 0;
+}
+
+@mixin pageBlock {
+  @extend .page__block;
+}
