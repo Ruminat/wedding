@@ -11,6 +11,16 @@ export default defineConfig({
       plugins: [autoprefixer()],
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        // Убираем автоматическое добавление crossorigin
+        entryFileNames: "[name].js",
+        chunkFileNames: "[name].js",
+        assetFileNames: "[name].[ext]",
+      },
+    },
+  },
   server: {
     host: true,
     open: true,
