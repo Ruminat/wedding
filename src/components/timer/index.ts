@@ -31,7 +31,7 @@ function updateCountdown() {
   const secondsLeft = totalSeconds % 60;
 
   if (title) {
-    title.textContent = timeDiff <= 0 ? "Мы женаты уже" : "До свадьбы осталось";
+    title.textContent = timeDiff <= 0 ? "Женаты уже" : "Начало через";
   }
 
   const daysNumber = daysEl.querySelector(".timer__number");

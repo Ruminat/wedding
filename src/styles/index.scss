@@ -10,6 +10,10 @@ body {
   color: var.$dark-blue;
 }
 
+.page {
+  position: relative;
+}
+
 .gradient-background {
   position: absolute;
   top: 0;
@@ -26,7 +30,7 @@ body {
     #a1c4fd
   );
   background-size: 400% 400%;
-  animation: gradientFlow 15s ease infinite;
+  animation: gradientFlow 8s ease infinite;
 }
 
 @keyframes gradientFlow {
