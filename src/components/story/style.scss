@@ -1,0 +1,18 @@
+@use "/src/styles/var.scss";
+@use "/src/styles/mixin.scss";
+
+.story {
+  @include mixin.pageBlock;
+  background: var.$red;
+  gap: 24px;
+
+  .stories-wrapper {
+    @include mixin.flexFullCenter;
+  }
+  .stories {
+    @include mixin.flexColumn;
+    padding: 0 16px;
+    gap: 16px;
+    max-width: 600px;
+  }
+}
