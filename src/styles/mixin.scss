@@ -5,6 +5,25 @@
   padding: 64px 0;
 }
 
+.flex {
+  display: flex;
+}
+.flex__full-center {
+  @extend .flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex__column {
+  @extend .flex;
+  flex-direction: column;
+}
+
 @mixin pageBlock {
   @extend .page__block;
+}
+@mixin flexFullCenter {
+  @extend .flex__full-center;
+}
+@mixin flexColumn {
+  @extend .flex__column;
 }

@@ -5,9 +5,11 @@
 @import "/src/components/invite/style.scss";
 @import "/src/components/gallery/style.scss";
 
+html,
 body {
-  font-family: 'Roboto light';
+  font-family: 'Inter';
   color: var.$dark-blue;
+  background: var.$dark-blue;
 }
 
 .page {

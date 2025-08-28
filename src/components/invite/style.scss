@@ -13,24 +13,28 @@
     font-size: 24px;
   }
 
+  .pairs-wrapper {
+    @include mixin.flexFullCenter;
+  }
   .pairs {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    max-width: 600px;
     gap: 8px;
+    padding: 0 16px;
   }
 
-  .keys {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    text-align: right;
+  .pair {
+    @include mixin.flexColumn;
+    gap: 4px;
   }
-  .values {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    text-align: left;
+
+  .key {
+    opacity: 0.7;
+  }
+
+  .pair__time + .pair__time {
+    margin-top: 2px;
   }
 
   a {
