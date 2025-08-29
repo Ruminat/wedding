@@ -29,9 +29,6 @@
     @include mixin.flexFullCenter;
   }
   .stories {
-    // @include mixin.flexColumn;
-    padding: 0 16px;
-    gap: 16px;
     max-width: 600px;
   }
 }

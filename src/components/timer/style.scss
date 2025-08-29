@@ -4,7 +4,6 @@
 .timer {
   @include mixin.pageBlock;
   background: var.$darkBlue;
-  color: var.$whiteYellow;
 
   h3 {
     text-align: center;
