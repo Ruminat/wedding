@@ -2,15 +2,34 @@
 @use "/src/styles/mixin.scss";
 
 .story {
-  @include mixin.pageBlock;
-  background: var.$red;
+  @include mixin.pageBlockLight;
+  color: var.$darkBlue !important;
+  background: var.$pastel;
   gap: 24px;
+
+  .story-image-wrapper {
+    @include mixin.flexFullCenter;
+  }
+
+  .story__image {
+    display: block;
+    max-width: 230px;
+    max-height: 95px;
+    width: auto;
+    height: auto;
+    float: right;
+    margin: 0 10px 10px 0;
+  }
+
+  p + p {
+    margin-top: 12px;
+  }
 
   .stories-wrapper {
     @include mixin.flexFullCenter;
   }
   .stories {
-    @include mixin.flexColumn;
+    // @include mixin.flexColumn;
     padding: 0 16px;
     gap: 16px;
     max-width: 600px;

@@ -1,11 +1,12 @@
 @use "/src/styles/var.scss";
 
-.page__block {
+.page__block-dark,
+.page__block-light {
   display: flex;
   flex-direction: column;
   width: 100%;
   padding: 64px 0;
-  color: var.$white-yellow;
+  color: var.$whiteYellow;
 
   h3 {
     text-align: center;
@@ -14,12 +15,29 @@
   }
 
   a {
-    color: rgb(200, 200, 256);
     outline: none;
     text-decoration: none;
+  }
+}
+.page__block-dark {
+  color: var.$whiteYellow;
+
+  a {
+    color: var.$linkDark;
 
     &:hover {
-      color: rgb(240, 240, 256);
+      color: var.$linkDarkHover;
+    }
+  }
+}
+.page__block-light {
+  color: var.$whiteYellow;
+
+  a {
+    color: var.$linkLight;
+
+    &:hover {
+      color: var.$linkLightHover;
     }
   }
 }
@@ -38,7 +56,10 @@
 }
 
 @mixin pageBlock {
-  @extend .page__block;
+  @extend .page__block-dark;
+}
+@mixin pageBlockLight {
+  @extend .page__block-light;
 }
 @mixin flexFullCenter {
   @extend .flex__full-center;
