@@ -6,7 +6,6 @@
   flex-direction: column;
   width: 100%;
   padding: 64px 16px;
-  color: var.$whiteYellow;
 
   h3 {
     text-align: center;
@@ -31,7 +30,7 @@
   }
 }
 .page__block-light {
-  color: var.$whiteYellow;
+  color: var.$darkBlue;
 
   a {
     color: var.$linkLight;

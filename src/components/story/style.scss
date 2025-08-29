@@ -3,7 +3,6 @@
 
 .story {
   @include mixin.pageBlockLight;
-  color: var.$darkBlue !important;
   background: var.$pastel;
   gap: 24px;
 

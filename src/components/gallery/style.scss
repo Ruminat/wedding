@@ -2,8 +2,7 @@
 @use "/src/styles/mixin.scss";
 
 .gallery {
-  @include mixin.pageBlock;
-  // background: rgba(255, 255, 255, 0.6);
+  @include mixin.pageBlockLight;
   background: var.$pink;
   align-items: center;
   padding: 0;
@@ -83,10 +82,4 @@ img.gallery__image {
   h2 {
     font-size: 14px;
   }
-}
-
-.gallery__header {
-  color: var.$whiteYellow;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  font-weight: bold;
 }
