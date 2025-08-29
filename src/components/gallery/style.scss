@@ -3,8 +3,8 @@
 
 .gallery {
   @include mixin.pageBlock;
-  background: rgba(255, 255, 255, 0.6);
-  color: var.$darkBlue;
+  // background: rgba(255, 255, 255, 0.6);
+  background: var.$pink;
   align-items: center;
   padding: 0;
   align-items: center;
@@ -43,7 +43,7 @@ img.gallery__image {
   overflow: hidden;
   // background-image: url("/photo/we.png");
   // background-size: auto;
-  background: #ffb3b7;
+  background: var.$pink;
   filter: blur(4px);
 }
 
