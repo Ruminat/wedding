@@ -37,12 +37,13 @@ function addListeners() {
 async function sendHandler(answer: string) {
   const { who, plural, scriptURL } = getUrlParameters();
 
-  blockAction("show", $loading);
   hideButtons();
 
-  if (!who || !scriptURL) {
+  if (!scriptURL) {
     return showError("Неправильная ссылка — обратитесь к организаторам");
   }
+
+  show($loading);
 
   try {
     if (scriptURL === "fake") {
@@ -50,7 +51,7 @@ async function sendHandler(answer: string) {
     } else {
       await fetch(scriptURL, {
         method: "POST",
-        body: JSON.stringify({ name: who, answer }),
+        body: JSON.stringify({ name: who ?? "Тайный незнакомец", answer }),
         headers: { "Content-Type": "application/json" },
       });
     }
@@ -58,11 +59,11 @@ async function sendHandler(answer: string) {
     $successMessage.textContent = getReaction();
     $successImage.classList.add(getImageClassName());
 
-    blockAction("show", $success);
+    show($success);
   } catch (error) {
     showError(`Ошибка при отправке — ${plural ? "попробуйте" : "попробуй"} связаться с нами напрямую`);
   } finally {
-    blockAction("hide", $loading);
+    hide($loading);
   }
 
   function getReaction() {
@@ -83,27 +84,26 @@ function hideButtons() {
   $meh.setAttribute("disabled", "true");
   $bad.setAttribute("disabled", "true");
 
-  blockAction("hide", $buttons);
+  hide($buttons);
 }
 
-async function blockAction(type: "hide" | "show", element: HTMLElement) {
-  if (type === "hide") {
-    element.classList.add("hidden");
+async function show(element: HTMLElement) {
+  element.classList.remove("missing");
 
-    await delay(1000);
+  await delay(10);
 
-    element.classList.add("missing");
-  } else {
-    element.classList.remove("missing");
+  element.classList.remove("hidden");
+}
+async function hide(element: HTMLElement) {
+  element.classList.add("hidden");
 
-    await delay(10);
+  await delay(1000);
 
-    element.classList.remove("hidden");
-  }
+  element.classList.add("missing");
 }
 
 function showError(message: string) {
   $errorMessage.textContent = message;
 
-  blockAction("show", $error);
+  show($error);
 }

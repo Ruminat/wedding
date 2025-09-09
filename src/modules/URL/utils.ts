@@ -9,6 +9,6 @@ export function getUrlParameters() {
     who: param("who"),
     plural: param("plural") === "yes",
     fool: param("fool") === "yes",
-    scriptURL: scriptURL && scriptURL !== "fake" ? scriptURL : "fake",
+    scriptURL: scriptURL ?? "fake",
   };
 }
