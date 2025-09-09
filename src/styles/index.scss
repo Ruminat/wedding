@@ -1,10 +1,11 @@
 @use "./reset.scss";
 @use "./var.scss";
 
-@import "/src/components/timer/style.scss";
 @import "/src/components/invite/style.scss";
 @import "/src/components/story/style.scss";
-@import "/src/components/gallery/style.scss";
+@import "/src/components/welcome/style.scss";
+@import "/src/components/form/style.scss";
+@import "/src/components/timer/style.scss";
 
 html,
 body {
@@ -16,25 +17,6 @@ body {
 .page {
   position: relative;
 }
-
-// .gradient-background {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   overflow: hidden;
-//   width: 100%;
-//   height: 100%;
-//   z-index: -1;
-//   background: linear-gradient(
-//     45deg,
-//     #ff9a9e,
-//     #fad0c4,
-//     #fad0c4,
-//     #a1c4fd
-//   );
-//   background-size: 400% 400%;
-//   animation: gradientFlow 8s ease infinite;
-// }
 
 @keyframes gradientFlow {
   0% {

@@ -1,0 +1,18 @@
+@use "/src/styles/var.scss";
+@use "/src/styles/mixin.scss";
+
+.welcome {
+  @include mixin.flexFullCenter;
+  background: var.$pink;
+  padding: 0;
+}
+
+img.welcome__image {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}

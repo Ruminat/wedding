@@ -1,0 +1,165 @@
+@use "/src/styles/var.scss";
+@use "/src/styles/mixin.scss";
+
+.form {
+  @include mixin.pageBlock;
+  background: var.$gray;
+}
+
+.form-content {
+  @include mixin.flexFullCenter;
+  position: relative;
+  height: 216px;
+}
+
+.form-buttons {
+  @include mixin.flexFullCenter;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-button {
+  position: relative;
+  display: inline-block;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  color: var.$whiteYellow;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-button.meh {
+  opacity: 0.8;
+  background: var.$blue;
+}
+
+.form-button.bad {
+  opacity: 0.6;
+  background: var.$red;
+}
+
+.form-button:hover,
+.form-button:focus {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.9);
+  opacity: 1;
+}
+.form-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  box-shadow: none;
+  transform: none;
+}
+
+.form-button.good {
+  background: linear-gradient(270deg, var.$darkBlue, var.$red, var.$blue, var.$gray);
+  background-size: 800% 800%;
+  animation: gradientShift 16s ease infinite;
+}
+
+.form-button.good::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(270deg, var.$gray, var.$blue, var.$red, var.$darkBlue);
+  background-size: 300% 300%;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  animation: borderShift 3s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes borderShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.form-image {
+  height: 128px;
+  width: 96px;
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  background-size: 100% 100%;
+}
+.form-image.sad {
+  background-image: url("/photo/sad.png");
+}
+
+.form-error,
+.form-success,
+.form-loading,
+.form-buttons {
+  @include mixin.flexFullCenter;
+  flex-direction: column;
+  gap: 16px;
+  position: absolute;
+  inset: 0;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.form-error.missing,
+.form-success.missing,
+.form-loading.missing,
+.form-buttons.missing {
+  display: none;
+}
+
+.form-error.hidden,
+.form-success.hidden,
+.form-loading.hidden,
+.form-buttons.hidden {
+  opacity: 0;
+}
+
+.form-loading-loader {
+  width: 50px;
+  aspect-ratio: 1;
+  color: var.$red;
+  background:
+   radial-gradient(circle at 60% 65%, currentColor 62%, #0000 65%) top left,
+   radial-gradient(circle at 40% 65%, currentColor 62%, #0000 65%) top right,
+   linear-gradient(to bottom left, currentColor 42%,#0000 43%) bottom left ,
+   linear-gradient(to bottom right,currentColor 42%,#0000 43%) bottom right;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.form-loading-loader:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  opacity: 0.4;
+  animation: heartAnimation 1s infinite;
+}
+
+@keyframes heartAnimation {
+  to {
+    transform: scale(1.8);
+    opacity: 0
+  }
+}

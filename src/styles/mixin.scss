@@ -3,6 +3,7 @@
 .page__block-dark,
 .page__block-light {
   display: flex;
+  gap: 24px;
   flex-direction: column;
   width: 100%;
   padding: 64px 16px;
@@ -16,6 +17,9 @@
   a {
     outline: none;
     text-decoration: none;
+  }
+  a:focus {
+    text-decoration: underline;
   }
 }
 .page__block-dark {

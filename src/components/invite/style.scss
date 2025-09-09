@@ -4,7 +4,6 @@
 .invite {
   @include mixin.pageBlock;
   background: var.$blue;
-  gap: 24px;
 
   .pairs-wrapper {
     @include mixin.flexFullCenter;
@@ -34,5 +33,13 @@
     font-size: 12px;
     text-align: center;
     font-style: italic;
+  }
+
+  .who {
+    transition: opacity 1s ease;
+    opacity: 1;
+  }
+  .who.hidden {
+    opacity: 0;
   }
 }
