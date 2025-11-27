@@ -2,8 +2,8 @@
 @use "/src/styles/mixin.scss";
 
 .timer {
-  @include mixin.pageBlock;
-  background: var.$darkBlue;
+  @include mixin.pageBlockLight;
+  background: var.$whiteGreen;
 }
 
 .timer__countdown {
@@ -22,9 +22,9 @@
 }
 
 .timer__number {
-  font-size: 36px;
+  font-size: 2rem;
   font-weight: bold;
 }
 .span.timer__text {
-  font-size: 24px;
+  font-size: 1.5rem;
 }

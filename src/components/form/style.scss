@@ -2,7 +2,7 @@
 @use "/src/styles/mixin.scss";
 
 .form {
-  @include mixin.pageBlock;
+  @include mixin.pageBlockLight;
   background: var.$gray;
 }
 
@@ -22,9 +22,10 @@
   position: relative;
   display: inline-block;
   padding: 14px 28px;
-  font-size: 16px;
+  font-size: 1rem;
+  width: 300px;
   font-weight: bold;
-  color: var.$whiteYellow;
+  color: var.$darkBlue;
   border: 2px solid transparent;
   border-radius: 12px;
   cursor: pointer;
@@ -34,18 +35,18 @@
 }
 
 .form-button.meh {
-  opacity: 0.8;
-  background: var.$blue;
+  opacity: 0.9;
+  background: var.$green;
 }
 
 .form-button.bad {
-  opacity: 0.6;
-  background: var.$red;
+  opacity: 0.8;
+  background: var.$whitePink;
 }
 
 .form-button:hover,
 .form-button:focus {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   opacity: 1;
 }
 .form-button:disabled {
@@ -56,9 +57,10 @@
 }
 
 .form-button.good {
-  background: linear-gradient(270deg, var.$darkBlue, var.$red, var.$blue, var.$gray);
-  background-size: 800% 800%;
-  animation: gradientShift 16s ease infinite;
+  background: var.$green;
+  // background: linear-gradient(270deg, var.$darkBlue, var.$red, var.$blue, var.$gray);
+  // background-size: 800% 800%;
+  // animation: gradientShift 16s ease infinite;
 }
 
 .form-button.good::before {
