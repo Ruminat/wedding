@@ -1,4 +1,4 @@
-const weddingDate = new Date("2026-08-25T12:00:00");
+const weddingDate = new Date(1787649600000); // Tue Aug 25 2026 12:20:00
 
 document.addEventListener("DOMContentLoaded", () => {
   updateCountdown();

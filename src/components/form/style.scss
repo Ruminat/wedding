@@ -3,7 +3,7 @@
 
 .form {
   @include mixin.pageBlockLight;
-  background: var.$gray;
+  background: #fee9d0;
 }
 
 .form-content {
@@ -21,9 +21,9 @@
 .form-button {
   position: relative;
   display: inline-block;
-  padding: 14px 28px;
+  padding: 14px 0;
   font-size: 1rem;
-  width: 300px;
+  width: 240px;
   font-weight: bold;
   color: var.$darkBlue;
   border: 2px solid transparent;
@@ -36,7 +36,7 @@
 
 .form-button.meh {
   opacity: 0.9;
-  background: var.$green;
+  background: var.$whiteGreen;
 }
 
 .form-button.bad {
@@ -105,8 +105,14 @@
   background-position: 0% 0%;
   background-size: 100% 100%;
 }
+.form-image.happy {
+  background-image: url("/photo/reaction.happy.png");
+}
+.form-image.waiting {
+  background-image: url("/photo/reaction.waiting.png");
+}
 .form-image.sad {
-  background-image: url("/photo/sad.png");
+  background-image: url("/photo/reaction.sad.png");
 }
 
 .form-error,
@@ -120,6 +126,10 @@
   inset: 0;
   opacity: 1;
   transition: opacity 0.5s ease;
+}
+
+.form-success {
+  gap: 0;
 }
 
 .form-error.missing,

@@ -23,8 +23,8 @@ addListeners();
 function modifyTitles() {
   const { plural, fool } = getUrlParameters();
 
-  $good!.textContent = `Конечно ${plural ? "приедем" : "приеду"}${fool ? " 😎" : "!"}`;
-  $meh!.textContent = `Пока не ${plural ? "знаем" : "знаю"}${fool ? " 🤔" : "..."}`;
+  $good!.textContent = `Конечно ${plural ? "приедем" : "приеду"}${fool ? /* " 😎" */ "!" : "!"}`;
+  $meh!.textContent = `Пока не ${plural ? "знаем" : "знаю"}${fool ? /* " 🤔" */ "..." : "..."}`;
   $bad!.textContent = `У ${plural ? "нас" : "меня"} не получится ${fool ? "🤡" : ":("}`;
 }
 
@@ -49,11 +49,14 @@ async function sendHandler(answer: string) {
     if (scriptURL === "fake") {
       await delay(3000);
     } else {
-      await fetch(scriptURL, {
-        method: "POST",
-        body: JSON.stringify({ name: who ?? "Тайный незнакомец", answer }),
-        headers: { "Content-Type": "application/json" },
-      });
+      await Promise.all([
+        delay(1000),
+        fetch(scriptURL, {
+          method: "POST",
+          body: JSON.stringify({ who: who ?? "Тайный незнакомец", answer }),
+          headers: { "Content-Type": "application/json" },
+        }),
+      ]);
     }
 
     $successMessage.textContent = getReaction();
@@ -73,8 +76,8 @@ async function sendHandler(answer: string) {
   }
 
   function getImageClassName() {
-    if (answer === "😎") return "sad";
-    if (answer === "🤔") return "sad";
+    if (answer === "😎") return "happy";
+    if (answer === "🤔") return "waiting";
     return "sad";
   }
 }
