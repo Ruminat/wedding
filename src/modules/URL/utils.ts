@@ -5,10 +5,13 @@ export function getUrlParameters() {
 
   const scriptURL = param("scriptURL") || import.meta.env.VITE_FORM_HANDLE;
 
+  const who = param("who");
+
   return {
-    who: param("who"),
+    who,
     plural: param("plural") !== undefined,
     fool: param("fool") !== undefined,
     scriptURL: scriptURL ?? "fake",
+    sleepons: who ? who.toLowerCase().includes("генриетта") : false,
   };
 }
