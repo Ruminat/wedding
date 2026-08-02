@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" type="image/png" href="/icon.png" />
   <title>Приглашение на свадьбу</title>
+  <script>
+    document.documentElement.classList.toggle(
+      "after-wedding-mode",
+      new URLSearchParams(window.location.search).has("afterWedding"),
+    );
+  </script>
   <link rel="stylesheet" href="./src/styles/index.scss" />
 </head>
 <body>
   <pug src="./src/index.pug" />
 
-  <script type="module" src="./src/components/timer/index.ts"></script>
-  <script type="module" src="./src/components/form/index.ts"></script>
-  <script type="module" src="./src/components/invite/index.ts"></script>
+  <script type="module" src="./src/index.ts"></script>
 </body>
 </html>

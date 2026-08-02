@@ -1,5 +1,7 @@
 const weddingDate = new Date(1787649600000); // Tue Aug 25 2026 12:20:00
 
+export {};
+
 document.addEventListener("DOMContentLoaded", () => {
   updateCountdown();
   setInterval(updateCountdown, 100);

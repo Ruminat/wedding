@@ -9,17 +9,21 @@
     "predeploy": "npm run build",
     "preview": "vite preview",
     "start": "npm run dev",
+    "test:e2e": "playwright test",
+    "test:e2e:update": "playwright test --update-snapshots",
     "typecheck": "tsc --noEmit"
   },
   "author": "ruminat",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@playwright/test": "^1.62.1",
     "@types/node": "^22.15.17",
     "gh-pages": "^6.3.0",
+    "sass": "^1.80.3",
+    "typescript": "^5.9.3",
     "vite": "^6.3.5",
-    "vite-plugin-pug": "^0.4.1",
-    "sass": "^1.80.3"
+    "vite-plugin-pug": "^0.4.1"
   },
   "dependencies": {
     "autoprefixer": "^10.4.21"

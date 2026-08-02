@@ -6,6 +6,7 @@
 @import "/src/components/welcome/style.scss";
 @import "/src/components/form/style.scss";
 @import "/src/components/timer/style.scss";
+@import "/src/components/after-wedding/style.scss";
 
 // @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap');
@@ -26,6 +27,24 @@ body {
 
 .page {
   position: relative;
+}
+
+.after-wedding-page {
+  display: none;
+}
+
+.after-wedding-mode {
+  body {
+    background: #fffaf3;
+  }
+
+  .invitation-page {
+    display: none;
+  }
+
+  .after-wedding-page {
+    display: block;
+  }
 }
 
 @keyframes gradientFlow {

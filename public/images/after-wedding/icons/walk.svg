@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 112" role="img" aria-label="Фонарь и силуэт Петербурга">
+  <g fill="none" stroke="#31566a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17 91h80M24 91V45M18 45h12l-2-17h-8zM21 22h6M24 17v5"/>
+    <path d="M20 47h8M21 51h6M24 51v40"/>
+    <path d="M42 86h52M47 86V64h42v22M52 64V50h32v14M57 50c0-9 5-16 11-20 6 4 11 11 11 20M68 30V18M64 23h8" stroke="#8da27b"/>
+    <path d="M43 72h48M55 58h26M58 86V72M68 86V72M79 86V72"/>
+    <path d="M91 30l2 4 4 2-4 2-2 4-2-4-4-2 4-2z" fill="#f2aaad" stroke="#e9999f"/>
+  </g>
+</svg>

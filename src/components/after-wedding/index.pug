@@ -1,0 +1,137 @@
+section.after-hero(aria-labelledby="after-hero-title")
+  .after-hero__sparkles(aria-hidden="true")
+    span ♡
+    span ✦
+    span ♡
+    span ✧
+  .after-container.after-hero__content
+    .after-ornament(aria-hidden="true")
+      span ·
+      span.after-ornament__hearts ♡♡
+      span ·
+    h1#after-hero-title Мы поженились!
+    p.after-hero__date 25 августа 2026 года · Санкт-Петербург
+    p.after-hero__lead Спасибо всем, кто был рядом с нами в этот день.#[br]Теперь эта страница — маленькое воспоминание о нашей свадьбе.
+    img.after-hero__couple(src="./images/after-wedding/hero-couple.png" alt="Нарисованные жених и невеста с букетом" width="1122" height="1402")
+
+section.after-timer(aria-labelledby="after-timer-title")
+  .after-container.after-timer__inner
+    .after-botanical(aria-hidden="true")
+      span ❧
+      span ♥
+      span ❧
+    h2#after-timer-title Мы женаты уже
+    .after-timer__countdown(role="timer" aria-live="off" aria-label="Время со дня свадьбы")
+      .after-timer__value
+        span.after-timer__number(data-after-timer="days") 00
+        span.after-timer__label(data-after-label="days") дней
+      .after-timer__value
+        span.after-timer__number(data-after-timer="hours") 00
+        span.after-timer__label(data-after-label="hours") часов
+      .after-timer__value
+        span.after-timer__number(data-after-timer="minutes") 00
+        span.after-timer__label(data-after-label="minutes") минут
+      .after-timer__value
+        span.after-timer__number(data-after-timer="seconds") 00
+        span.after-timer__label(data-after-label="seconds") секунд
+    .after-botanical.after-botanical--bottom(aria-hidden="true")
+      span ❧
+      span ♥
+      span ❧
+
+section.after-story(aria-labelledby="after-story-title")
+  .after-container
+    .after-section-heading
+      .after-botanical(aria-hidden="true")
+        span ❧
+        span ♥
+        span ❧
+      h2#after-story-title Как это было
+    .after-story__grid
+      .after-story__copy
+        p Этот день начался с лёгкого волнения, сборов и попыток ничего не забыть. Но очень быстро всё стало именно таким, как мы мечтали: тёплым, красивым и по-настоящему нашим.
+        p Мы расписались во Дворце бракосочетания № 2, прокатились по Петербургу вместе с гостями, а потом продолжили праздник в ресторане.
+        p Было много улыбок, объятий, тёплых слов и маленьких моментов, которые хочется пересматривать снова и снова.
+      .after-story__image-wrap
+        img.after-story__image(src="./images/after-wedding/story-wedding-day.png" alt="Молодожёны и гости за праздничным столом на фоне Петербурга" width="1536" height="1024" loading="lazy")
+
+section.after-day(aria-labelledby="after-day-title")
+  .after-container
+    .after-section-heading
+      .after-botanical(aria-hidden="true")
+        span ❧
+        span ♥
+        span ❧
+      h2#after-day-title Как прошёл день
+    .after-day__timeline
+      article.after-day-card
+        span.after-day-card__number 1
+        img.after-day-card__icon(src="./images/after-wedding/icons/preparations.svg" alt="" width="112" height="112")
+        h3 Сборы
+        p Утро, цветы и последние приготовления
+      article.after-day-card
+        span.after-day-card__number 2
+        img.after-day-card__icon(src="./images/after-wedding/icons/ceremony.svg" alt="" width="112" height="112")
+        h3 Церемония
+        p Самый волнительный момент дня
+      article.after-day-card
+        span.after-day-card__number 3
+        img.after-day-card__icon(src="./images/after-wedding/icons/walk.svg" alt="" width="112" height="112")
+        h3 Прогулка
+        p Петербург, гости и улыбки
+      article.after-day-card
+        span.after-day-card__number 4
+        img.after-day-card__icon(src="./images/after-wedding/icons/restaurant.svg" alt="" width="112" height="112")
+        h3 Ресторан
+        p Тёплый вечер в кругу близких
+    .after-botanical.after-botanical--bottom(aria-hidden="true")
+      span ❧
+      span ♥
+      span ❧
+
+section.after-gallery#gallery(aria-labelledby="after-gallery-title")
+  .after-container
+    .after-section-heading
+      .after-botanical(aria-hidden="true")
+        span ❧
+        span ♥
+        span ❧
+      h2#after-gallery-title Фотографии со свадьбы
+      p Немного тёплых кадров с нашего дня — от церемонии до самого уютного вечера.
+    .after-gallery__grid
+      figure.after-gallery-card.after-gallery-card--ceremony
+        .after-gallery-card__image
+          img(src="./images/after-wedding/gallery/gallery-ceremony.webp" alt="Молодожёны на церемонии у цветочной арки" width="1672" height="941" loading="lazy")
+        figcaption Церемония
+      figure.after-gallery-card.after-gallery-card--walk
+        .after-gallery-card__image
+          img(src="./images/after-wedding/gallery/gallery-walk.webp" alt="Прогулка молодожёнов по набережной Петербурга" width="1448" height="1086" loading="lazy")
+        figcaption Прогулка
+      figure.after-gallery-card
+        .after-gallery-card__image
+          img(src="./images/after-wedding/gallery/gallery-guests.webp" alt="Молодожёны и гости поднимают бокалы за праздничным столом" width="1448" height="1086" loading="lazy")
+        figcaption Гости
+      figure.after-gallery-card
+        .after-gallery-card__image
+          img(src="./images/after-wedding/gallery/gallery-details.webp" alt="Букет, обручальные кольца и свадебная лента" width="1448" height="1086" loading="lazy")
+        figcaption Детали
+      figure.after-gallery-card
+        .after-gallery-card__image
+          img(src="./images/after-wedding/gallery/gallery-evening.webp" alt="Уютный вечер молодожёнов в ресторане" width="1448" height="1086" loading="lazy")
+        figcaption Вечер
+
+section.after-thanks(aria-labelledby="after-thanks-title")
+  .after-container.after-thanks__inner
+    .after-botanical(aria-hidden="true")
+      span ❧
+      span ♥
+      span ❧
+    h2#after-thanks-title Спасибо, что были с нами
+    p Этот день стал таким тёплым и особенным благодаря людям, которые были рядом.#[br]Мы очень рады, что смогли разделить его с близкими и сохранить эти воспоминания.
+    a.after-thanks__button(href="#gallery") Смотреть все фото
+    .after-ornament.after-ornament--footer(aria-hidden="true")
+      span ✧
+      span ·
+      span.after-ornament__hearts ♡♡
+      span ·
+      span ✧

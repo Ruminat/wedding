@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 112" role="img" aria-label="Бокалы">
+  <g fill="none" stroke="#31566a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 31h28c0 25-4 34-14 34s-14-9-14-34z" fill="#fff7e9"/>
+    <path d="M27 45h22c-1 12-4 16-11 16s-10-4-11-16z" fill="#f5d9a3" stroke="#d7a64d"/>
+    <path d="M38 65v21M28 88h20"/>
+    <path d="M60 31h28c0 25-4 34-14 34s-14-9-14-34z" fill="#fff7e9"/>
+    <path d="M63 45h22c-1 12-4 16-11 16s-10-4-11-16z" fill="#f5d9a3" stroke="#d7a64d"/>
+    <path d="M74 65v21M64 88h20"/>
+    <path d="M56 18l3 6 6 3-6 3-3 6-3-6-6-3 6-3z" fill="#f2aaad" stroke="#e9999f"/>
+    <path d="M92 48l2 4 4 2-4 2-2 4-2-4-4-2 4-2z" fill="#f2aaad" stroke="#e9999f"/>
+  </g>
+</svg>

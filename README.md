@@ -12,6 +12,13 @@ npm install
 npm run dev
 ```
 
+## Agent documentation
+
+- [Repository agent guide](AGENTS.md)
+- [Post-wedding context and quality bar](docs/after-wedding-context.md)
+- [Image quality guide](docs/image-quality-guide.md)
+- [Visual testing guide](docs/visual-testing.md)
+
 ## Environment variables
 
 | Variable | Where | Description |

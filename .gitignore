@@ -9,6 +9,9 @@ yarn.lock
 dist/
 build/
 out/
+test-results/
+playwright-report/
+tmp/
 
 # Environment variables
 .env

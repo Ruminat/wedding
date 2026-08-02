@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 112" role="img" aria-label="Букет и флакон духов">
+  <g fill="none" stroke="#31566a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M39 69c8-10 12-23 10-37M39 69c-4-13-12-23-23-30M39 69c2-16-2-29-11-39M39 69c9-14 18-23 29-28" stroke="#8da27b"/>
+    <path d="M32 68l7 18 7-18" stroke="#e9999f"/>
+    <path d="M35 75l-8 14M42 75l8 14" stroke="#e9999f"/>
+    <circle cx="18" cy="38" r="8" fill="#f7c2c3"/>
+    <circle cx="29" cy="29" r="9" fill="#fff6e9"/>
+    <circle cx="48" cy="31" r="8" fill="#f2aaad"/>
+    <circle cx="60" cy="40" r="9" fill="#fff6e9"/>
+    <circle cx="35" cy="44" r="10" fill="#f5b7b9"/>
+    <path d="M75 45h22v40H75z" fill="#fbe0ca"/>
+    <path d="M81 37h10v8H81zM79 33h14"/>
+    <path d="M81 57c4 2 7 2 11 0v14c-4-2-7-2-11 0z" stroke="#e9999f"/>
+  </g>
+</svg>

@@ -1,0 +1,633 @@
+@use "/src/styles/var.scss";
+
+:root {
+  --after-navy: #{var.$darkBlue};
+  --after-pink: #f2a1a8;
+  --after-pink-soft: #ffd3d5;
+  --after-sage: #{var.$green};
+  --after-sage-soft: #{var.$whiteGreen};
+  --after-cream: #{var.$pastel};
+  --after-cream-soft: #fff7ed;
+  --after-peach: #f8dfc2;
+}
+
+.after-wedding-page {
+  --section-radius: 44px;
+  overflow: hidden;
+  color: var(--after-navy);
+  background: #fffaf3;
+  font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+  }
+
+  h2 {
+    font-size: clamp(2.15rem, 4.5vw, 4rem);
+    font-weight: 700;
+  }
+
+  p {
+    line-height: 1.65;
+  }
+}
+
+.after-container {
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.after-hero,
+.after-timer,
+.after-story,
+.after-day,
+.after-gallery,
+.after-thanks {
+  position: relative;
+}
+
+.after-hero {
+  min-height: min(980px, 100svh);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.32), transparent 31%),
+    linear-gradient(145deg, #ffd7d7 0%, #f9bec3 56%, #f6b1b8 100%);
+}
+
+.after-hero__content {
+  display: flex;
+  min-height: min(980px, 100svh);
+  padding-top: clamp(56px, 8vh, 96px);
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.after-hero h1 {
+  margin-top: 16px;
+  font-size: clamp(3.25rem, 8vw, 6.6rem);
+  font-weight: 700;
+}
+
+.after-hero__date {
+  margin-top: 22px;
+  font-size: clamp(1.1rem, 2.3vw, 1.55rem);
+  font-weight: 500;
+}
+
+.after-hero__lead {
+  max-width: 760px;
+  margin-top: 24px;
+  font-size: clamp(1rem, 1.9vw, 1.25rem);
+}
+
+.after-hero__couple {
+  z-index: 1;
+  width: min(490px, 72vw);
+  height: auto;
+  margin-top: 12px;
+  filter: drop-shadow(0 22px 30px rgba(98, 59, 72, 0.08));
+}
+
+.after-hero__sparkles {
+  position: absolute;
+  inset: 25% 8% 8%;
+  pointer-events: none;
+}
+
+.after-hero__sparkles span {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(1.2rem, 2.4vw, 2rem);
+}
+
+.after-hero__sparkles span:nth-child(1) { top: 32%; left: 8%; transform: rotate(-18deg); }
+.after-hero__sparkles span:nth-child(2) { top: 12%; right: 14%; }
+.after-hero__sparkles span:nth-child(3) { bottom: 18%; right: 6%; transform: rotate(12deg); }
+.after-hero__sparkles span:nth-child(4) { bottom: 34%; left: 16%; }
+
+.after-ornament,
+.after-botanical {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--after-pink);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.after-ornament__hearts {
+  letter-spacing: -0.35em;
+  font-size: 1.85rem;
+}
+
+.after-botanical {
+  color: #a9ba8e;
+  font-family: Georgia, serif;
+  font-size: 2rem;
+}
+
+.after-botanical span:first-child {
+  transform: rotate(18deg);
+}
+
+.after-botanical span:nth-child(2) {
+  color: var(--after-pink);
+  font-family: inherit;
+  font-size: 0.85rem;
+}
+
+.after-botanical span:last-child {
+  transform: scaleX(-1) rotate(18deg);
+}
+
+.after-timer {
+  z-index: 2;
+  margin-top: -1px;
+  padding: clamp(74px, 9vw, 120px) 0;
+  border-radius: var(--section-radius);
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.36), transparent 28%),
+    linear-gradient(135deg, #f0f1d4, #e2e7bf 60%, #d8dfb5);
+}
+
+.after-timer__inner {
+  text-align: center;
+}
+
+.after-timer h2 {
+  margin-top: 12px;
+}
+
+.after-timer__countdown {
+  display: grid;
+  max-width: 900px;
+  margin: clamp(42px, 6vw, 66px) auto 0;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.after-timer__value {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 18px;
+}
+
+.after-timer__value + .after-timer__value::before {
+  position: absolute;
+  top: 8%;
+  left: 0;
+  width: 1px;
+  height: 78%;
+  border-left: 2px dotted rgba(242, 161, 168, 0.58);
+  content: "";
+}
+
+.after-timer__value + .after-timer__value::after {
+  position: absolute;
+  top: 42%;
+  left: -7px;
+  padding: 2px;
+  color: var(--after-pink);
+  background: #e7eac6;
+  content: "♥";
+  font-size: 0.75rem;
+}
+
+.after-timer__number {
+  font-size: clamp(3.2rem, 8vw, 6.4rem);
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.after-timer__label {
+  margin-top: 16px;
+  font-size: clamp(0.9rem, 2vw, 1.35rem);
+}
+
+.after-botanical--bottom {
+  margin-top: clamp(40px, 6vw, 70px);
+}
+
+.after-story {
+  padding: clamp(84px, 10vw, 132px) 0;
+  background:
+    radial-gradient(circle at 88% 32%, rgba(248, 217, 197, 0.42), transparent 30%),
+    var(--after-cream-soft);
+}
+
+.after-section-heading {
+  text-align: center;
+}
+
+.after-section-heading h2 {
+  margin-top: 12px;
+}
+
+.after-section-heading > p {
+  max-width: 680px;
+  margin: 20px auto 0;
+  font-size: clamp(1rem, 1.8vw, 1.18rem);
+}
+
+.after-story__grid {
+  display: grid;
+  margin-top: clamp(46px, 6vw, 76px);
+  align-items: center;
+  grid-template-columns: minmax(0, 0.9fr) minmax(460px, 1.1fr);
+  gap: clamp(38px, 6vw, 82px);
+}
+
+.after-story__copy {
+  font-size: clamp(1rem, 1.55vw, 1.18rem);
+}
+
+.after-story__copy p + p {
+  margin-top: 24px;
+}
+
+.after-story__image-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 36px;
+  background: rgba(255, 246, 234, 0.74);
+}
+
+.after-story__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.after-day {
+  padding: clamp(84px, 10vw, 128px) 0;
+  border-radius: var(--section-radius);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.4), transparent 25%),
+    linear-gradient(145deg, #edf0d1, #dce4ba);
+}
+
+.after-day__timeline {
+  position: relative;
+  display: grid;
+  margin-top: clamp(48px, 7vw, 78px);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.after-day__timeline::before {
+  position: absolute;
+  top: 54%;
+  right: 7%;
+  left: 7%;
+  border-top: 2px dotted rgba(242, 161, 168, 0.68);
+  content: "";
+}
+
+.after-day-card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-height: 360px;
+  align-items: center;
+  flex-direction: column;
+  padding: 38px 24px 30px;
+  border: 1px solid rgba(3, 63, 99, 0.045);
+  border-radius: 28px;
+  background: rgba(255, 248, 238, 0.92);
+  box-shadow: 0 16px 42px rgba(3, 63, 99, 0.055);
+  text-align: center;
+}
+
+.after-day-card:not(:last-child)::after {
+  position: absolute;
+  top: 52%;
+  right: -24px;
+  width: 16px;
+  color: var(--after-pink);
+  background: #e4e9c4;
+  content: "♥";
+  font-size: 0.8rem;
+}
+
+.after-day-card__number {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: linear-gradient(145deg, #f6b1b5, #ec8f97);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.after-day-card__icon {
+  width: 112px;
+  height: 112px;
+  margin-top: 18px;
+  object-fit: contain;
+}
+
+.after-day-card h3 {
+  margin-top: 14px;
+  font-size: 1.35rem;
+}
+
+.after-day-card p {
+  margin-top: 10px;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.after-gallery {
+  padding: clamp(84px, 10vw, 132px) 0;
+  background: var(--after-cream-soft);
+}
+
+.after-gallery__grid {
+  display: grid;
+  margin-top: clamp(44px, 6vw, 68px);
+  grid-template-columns: repeat(12, 1fr);
+  gap: 22px 18px;
+}
+
+.after-gallery-card {
+  grid-column: span 4;
+}
+
+.after-gallery-card--ceremony {
+  grid-column: span 8;
+}
+
+.after-gallery-card--walk {
+  grid-column: span 4;
+}
+
+.after-gallery-card__image {
+  position: relative;
+  height: clamp(220px, 24vw, 335px);
+  overflow: hidden;
+  border-radius: 28px;
+  background: var(--after-cream);
+  box-shadow: 0 14px 38px rgba(3, 63, 99, 0.07);
+}
+
+.after-gallery-card--ceremony .after-gallery-card__image,
+.after-gallery-card--walk .after-gallery-card__image {
+  height: clamp(270px, 33vw, 450px);
+}
+
+.after-gallery-card__image::after {
+  position: absolute;
+  inset: 0;
+  box-shadow:
+    inset 0 0 0 1px rgba(3, 63, 99, 0.05),
+    inset 0 0 46px rgba(255, 247, 237, 0.16);
+  content: "";
+  pointer-events: none;
+}
+
+.after-gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.94) contrast(0.97);
+  transition: transform 500ms ease;
+}
+
+.after-gallery-card:hover img {
+  transform: scale(1.018);
+}
+
+.after-gallery-card figcaption {
+  padding: 13px 8px 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.after-thanks {
+  margin: 0 12px 12px;
+  padding: clamp(78px, 9vw, 116px) 0;
+  overflow: hidden;
+  border-radius: var(--section-radius);
+  background:
+    radial-gradient(circle at 50% 38%, rgba(255, 255, 255, 0.32), transparent 34%),
+    linear-gradient(145deg, #ffd9d9, #f9c1c5);
+}
+
+.after-thanks__inner {
+  text-align: center;
+}
+
+.after-thanks h2 {
+  margin-top: 12px;
+}
+
+.after-thanks p {
+  max-width: 780px;
+  margin: 22px auto 0;
+  font-size: clamp(1rem, 1.75vw, 1.16rem);
+}
+
+.after-thanks__button {
+  display: inline-flex;
+  min-width: 290px;
+  min-height: 58px;
+  margin-top: 34px;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border-radius: 999px;
+  color: var(--after-navy);
+  background: linear-gradient(135deg, #b9c99c, #a7bb88);
+  box-shadow: 0 10px 28px rgba(3, 63, 99, 0.09);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.after-thanks__button:hover,
+.after-thanks__button:focus-visible {
+  box-shadow: 0 14px 32px rgba(3, 63, 99, 0.14);
+  transform: translateY(-2px);
+}
+
+.after-thanks__button:focus-visible {
+  outline: 3px solid rgba(3, 63, 99, 0.3);
+  outline-offset: 4px;
+}
+
+.after-ornament--footer {
+  margin-top: 38px;
+}
+
+@media (max-width: 900px) {
+  .after-story__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .after-story__image-wrap {
+    order: -1;
+  }
+
+  .after-day__timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .after-day__timeline::before,
+  .after-day-card::after {
+    display: none;
+  }
+
+  .after-gallery-card,
+  .after-gallery-card--ceremony,
+  .after-gallery-card--walk {
+    grid-column: span 6;
+  }
+
+  .after-gallery-card--ceremony {
+    grid-column: span 12;
+  }
+
+  .after-gallery-card__image,
+  .after-gallery-card--ceremony .after-gallery-card__image,
+  .after-gallery-card--walk .after-gallery-card__image {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .after-gallery-card--ceremony .after-gallery-card__image {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 620px) {
+  .after-wedding-page {
+    --section-radius: 30px;
+  }
+
+  .after-container {
+    width: min(100% - 32px, 1180px);
+  }
+
+  .after-hero,
+  .after-hero__content {
+    min-height: 760px;
+  }
+
+  .after-hero__content {
+    padding-top: 46px;
+  }
+
+  .after-hero h1 {
+    margin-top: 12px;
+    font-size: clamp(2.9rem, 14vw, 4.2rem);
+  }
+
+  .after-hero__date {
+    max-width: 280px;
+    margin-top: 16px;
+  }
+
+  .after-hero__lead {
+    margin-top: 18px;
+    font-size: 0.98rem;
+  }
+
+  .after-hero__couple {
+    width: min(420px, 92vw);
+    margin-top: 4px;
+  }
+
+  .after-timer__countdown {
+    gap: 0;
+  }
+
+  .after-timer__value {
+    padding-inline: 6px;
+  }
+
+  .after-timer__number {
+    font-size: clamp(2.45rem, 13vw, 3.5rem);
+  }
+
+  .after-timer__label {
+    margin-top: 10px;
+    font-size: clamp(0.68rem, 3vw, 0.85rem);
+  }
+
+  .after-timer__value + .after-timer__value::after {
+    left: -5px;
+    font-size: 0.55rem;
+  }
+
+  .after-story__grid {
+    margin-top: 36px;
+    gap: 30px;
+  }
+
+  .after-story__image-wrap {
+    border-radius: 24px;
+  }
+
+  .after-story__copy p + p {
+    margin-top: 18px;
+  }
+
+  .after-day__timeline {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .after-day-card {
+    min-height: 0;
+    padding: 28px 24px;
+  }
+
+  .after-day-card__icon {
+    width: 96px;
+    height: 96px;
+  }
+
+  .after-gallery__grid {
+    gap: 24px;
+  }
+
+  .after-gallery-card,
+  .after-gallery-card--ceremony,
+  .after-gallery-card--walk {
+    grid-column: 1 / -1;
+  }
+
+  .after-gallery-card__image,
+  .after-gallery-card--ceremony .after-gallery-card__image {
+    aspect-ratio: 4 / 3;
+    border-radius: 22px;
+  }
+
+  .after-thanks {
+    margin: 0 8px 8px;
+  }
+
+  .after-thanks__button {
+    width: min(100%, 320px);
+    min-width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .after-gallery-card img,
+  .after-thanks__button {
+    transition: none;
+  }
+}
