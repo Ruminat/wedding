@@ -12,7 +12,7 @@
 }
 
 .after-wedding-page {
-  --section-radius: 44px;
+  --section-radius: 0;
   overflow: hidden;
   color: var(--after-navy);
   background: #fffaf3;
@@ -329,9 +329,9 @@
   font-weight: 700;
 }
 
-.after-day-card__icon {
-  width: 112px;
-  height: 112px;
+.after-day-card__illustration {
+  width: min(100%, 220px);
+  height: auto;
   margin-top: 18px;
   object-fit: contain;
 }
@@ -415,7 +415,7 @@
 }
 
 .after-thanks {
-  margin: 0 12px 12px;
+  margin: 0;
   padding: clamp(78px, 9vw, 116px) 0;
   overflow: hidden;
   border-radius: var(--section-radius);
@@ -512,10 +512,6 @@
 }
 
 @media (max-width: 620px) {
-  .after-wedding-page {
-    --section-radius: 30px;
-  }
-
   .after-container {
     width: min(100% - 32px, 1180px);
   }
@@ -594,9 +590,8 @@
     padding: 28px 24px;
   }
 
-  .after-day-card__icon {
-    width: 96px;
-    height: 96px;
+  .after-day-card__illustration {
+    width: min(100%, 280px);
   }
 
   .after-gallery__grid {
@@ -613,10 +608,6 @@
   .after-gallery-card--ceremony .after-gallery-card__image {
     aspect-ratio: 4 / 3;
     border-radius: 22px;
-  }
-
-  .after-thanks {
-    margin: 0 8px 8px;
   }
 
   .after-thanks__button {
