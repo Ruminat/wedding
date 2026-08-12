@@ -2,10 +2,19 @@ const weddingDate = new Date(1787649600000); // Tue Aug 25 2026 12:20:00
 
 export {};
 
-document.addEventListener("DOMContentLoaded", () => {
+startCountdown();
+
+// The module is loaded through a dynamic import, so DOMContentLoaded is usually
+// already gone by the time it runs.
+function startCountdown() {
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => startCountdown(), { once: true });
+    return;
+  }
+
   updateCountdown();
   setInterval(updateCountdown, 100);
-});
+}
 
 function updateCountdown() {
   const countdown = document.querySelector(".timer__countdown");

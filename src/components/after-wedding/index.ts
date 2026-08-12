@@ -3,7 +3,13 @@ const WEDDING_DATE = new Date("2026-08-25T12:20:00+03:00").getTime();
 export {};
 const params = new URLSearchParams(window.location.search);
 const fixedNow = params.get("now");
-const fixedNowValue = fixedNow ? new Date(fixedNow).getTime() : undefined;
+const fixedNowValue = fixedNow ? new Date(fixedNow).getTime() : Number.NaN;
+const hasFixedNow = !Number.isNaN(fixedNowValue);
+const openedAt = hasFixedNow ? fixedNowValue : Date.now();
+
+// Preview mode: when the wedding has not happened yet, the counter starts from
+// the moment the page was opened instead of standing still at zero.
+const countdownStart = openedAt >= WEDDING_DATE ? WEDDING_DATE : openedAt;
 
 const timerElements = {
   days: document.querySelector<HTMLElement>("[data-after-timer='days']"),
@@ -21,13 +27,13 @@ const labelElements = {
 
 updateElapsedTime();
 
-if (fixedNowValue === undefined || Number.isNaN(fixedNowValue)) {
+if (!hasFixedNow) {
   window.setInterval(updateElapsedTime, 1000);
 }
 
 function updateElapsedTime() {
-  const now = fixedNowValue !== undefined && !Number.isNaN(fixedNowValue) ? fixedNowValue : Date.now();
-  const totalSeconds = Math.floor(Math.max(0, now - WEDDING_DATE) / 1000);
+  const now = hasFixedNow ? fixedNowValue : Date.now();
+  const totalSeconds = Math.floor(Math.max(0, now - countdownStart) / 1000);
   const days = Math.floor(totalSeconds / 86400);
   const hours = Math.floor((totalSeconds % 86400) / 3600);
   const minutes = Math.floor((totalSeconds % 3600) / 60);
