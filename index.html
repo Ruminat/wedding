@@ -4,12 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" type="image/png" href="/icon.png" />
-  <title>Приглашение на свадьбу</title>
+  <title>Мы поженились!</title>
   <script>
+    const params = new URLSearchParams(window.location.search);
+    const isAfterWedding = params.has("afterWedding") || !params.has("invitation");
     document.documentElement.classList.toggle(
       "after-wedding-mode",
-      new URLSearchParams(window.location.search).has("afterWedding"),
+      isAfterWedding,
     );
+    document.title = isAfterWedding ? "Мы поженились!" : "Приглашение на свадьбу";
   </script>
   <link rel="stylesheet" href="./src/styles/index.scss" />
 </head>

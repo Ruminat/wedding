@@ -15,9 +15,10 @@ The Playwright suite therefore captures each semantic block separately at deskto
 | `story` | `.after-story` |
 | `day` | `.after-day` |
 | `gallery` | `.after-gallery` |
+| `honeymoon` | `.after-honeymoon` |
 | `thanks` | `.after-thanks` |
 
-With two viewports, this produces twelve post-wedding baselines in:
+With two viewports, this produces fourteen post-wedding baselines in:
 
 ```txt
 tests/e2e/after-wedding.spec.ts-snapshots/
@@ -30,7 +31,7 @@ Do not consolidate them into full-page screenshots.
 The test URL freezes time:
 
 ```txt
-/?afterWedding&now=2026-10-14T08:52:03+03:00
+/?now=2026-10-14T08%3A52%3A03%2B03%3A00
 ```
 
 The expected timer starts with `49` days. Tests also:
@@ -40,7 +41,8 @@ The expected timer starts with `49` days. Tests also:
 - wait for fonts;
 - disable animation during comparison;
 - request reduced motion;
-- verify the invitation remains the default branch.
+- verify the memory page is the default branch, legacy `afterWedding` links still work, and the invitation remains available with `?invitation`;
+- verify both branches are selected before application scripts load.
 
 ## Commands
 
@@ -101,15 +103,24 @@ Story:
 Day:
 
 - four cards on desktop and one column on mobile;
+- the sequence is wedding ransom, ceremony, guest tour / couple's photo session, then restaurant;
+- the wedding ransom film link fits inside the first card and has a visible keyboard focus;
 - icons are centered and crisp;
 - connector decorations do not overlap text.
 
 Gallery:
 
-- ceremony, walk, guests, details, and evening are individually readable;
-- faces and important objects survive `cover` cropping;
-- captions remain outside images;
-- mobile cards are not too short to understand.
+- the note about pending professional photos and video is readable;
+- the guest photo album and wedding ransom film are clearly labeled;
+- links sit side by side on desktop and stack on mobile;
+- keyboard focus is visible and link content fits without clipping.
+
+Honeymoon:
+
+- South Korea and Gangnam Style copy remains short and readable;
+- copy and the trip film link sit side by side on desktop and stack on mobile;
+- only the trip film is shared; the private photo album is absent;
+- the link and icon remain within the card at mobile widths.
 
 Thanks:
 

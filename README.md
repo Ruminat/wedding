@@ -27,8 +27,11 @@ npm run dev
 
 ## Personalized invite links
 
+The post-wedding memory page opens by default. Add `?invitation` to view the original invitation. Existing `?afterWedding` links continue to open the memory page and take precedence over `invitation`.
+
 | Parameter | Description |
 | --- | --- |
+| `invitation` | Show the original invitation |
 | `who` | Guest name (e.g. `Дорогая Олечка`) |
 | `plural` | Plural verb forms |
 | `fool` | Tweak button labels |
@@ -37,7 +40,7 @@ npm run dev
 Example:
 
 ```
-https://ruminat.github.io/wedding/?who=Дорогие%20Катя%20и%20Денис&plural
+https://ruminat.github.io/wedding/?invitation&who=Дорогие%20Катя%20и%20Денис&plural
 ```
 
 ## Deployment

@@ -4,14 +4,16 @@
 
 This repository contains two experiences in one site:
 
-1. The original wedding invitation, rendered by default.
-2. A post-wedding memory page, rendered whenever the URL contains `afterWedding`.
+1. A post-wedding memory page, rendered by default.
+2. The original wedding invitation, available with `?invitation`.
 
 The new page is a continuation of the invitation rather than a separate brand. Its message is: “We got married; here is a small memory album about that day.”
 
 ## Entry points and routing
 
-The switch uses parameter presence, not its value:
+The memory page is the default, including for existing personalized links. Use `/?invitation` to open the original invitation; its personalization parameters still work.
+
+The legacy `afterWedding` parameter still selects the memory page and takes precedence over `invitation`. Both switches use parameter presence, not their value:
 
 ```txt
 /?afterWedding
@@ -42,16 +44,19 @@ The post-wedding timer never changes into invitation/countdown language. Before 
 
 ## Page structure
 
-The page has six independently testable blocks:
+The page has seven independently testable blocks:
 
 | Block | Selector | Visual role |
 | --- | --- | --- |
 | Hero | `.after-hero` | Dusty-pink announcement with the transparent couple illustration. |
 | Timer | `.after-timer` | Pale-sage elapsed-time panel. |
 | Story | `.after-story` | Warm-cream text and full restaurant illustration. |
-| Day | `.after-day` | Four rounded timeline cards with SVG icons. |
-| Gallery | `.after-gallery` | One large and four supporting album images. |
-| Thanks | `.after-thanks` | Dusty-pink closing message and gallery link. |
+| Day | `.after-day` | Four illustrated cards: wedding ransom with film link, ceremony at Wedding Palace No. 2, guest tour alongside the couple's photo session, and the restaurant celebration. |
+| Gallery | `.after-gallery` | A note that professional photos and video are pending, plus links to guest photos and the wedding ransom film. |
+| Honeymoon | `.after-honeymoon` | Pale-sage South Korea travel section with a link to the trip film. The photo album is private and must not be linked. |
+| Thanks | `.after-thanks` | Dusty-pink closing message and link back to the wedding media. |
+
+The external media links use the URLs supplied by the couple and open in a new tab. Only guest photos, the wedding ransom film, and the trip film are shared. The gallery illustrations are retained as assets but are not displayed as wedding photographs. Keep media descriptions and availability notes as HTML text.
 
 ## Design system
 
@@ -79,7 +84,8 @@ Desktop:
 - centered hero composition;
 - two-column story section;
 - four timeline cards in one row;
-- asymmetric gallery with a wide ceremony image.
+- two wedding media links side by side;
+- honeymoon copy beside the trip film link.
 
 Mobile:
 
@@ -87,7 +93,7 @@ Mobile:
 - the story illustration comes before its text;
 - the complete story scene remains visible at its natural 3:2 ratio;
 - timeline cards become one column;
-- each gallery image becomes a readable 4:3 card;
+- media links stack vertically with comfortably sized tap targets;
 - the four timer values stay on one row.
 
 Do not make a mobile layout by merely shrinking the desktop composition. Inspect mobile section screenshots independently.
@@ -98,24 +104,26 @@ Do not make a mobile layout by merely shrinking the desktop composition. Inspect
 | --- | --- |
 | `hero-couple.png` | Transparent PNG, shown with `contain` behavior directly on pink. |
 | `story-wedding-day.png` | 3:2 landscape illustration; always show the full scene without cropping. |
-| `gallery-ceremony.webp` | Wide hero gallery card; deliberate `cover` crop is allowed. |
-| `gallery-walk.webp` | 4:3 supporting card. |
-| `gallery-guests.webp` | 4:3 supporting card. |
-| `gallery-details.webp` | 4:3 supporting card. |
-| `gallery-evening.webp` | 4:3 supporting card. |
+| `gallery-ceremony.webp` | Retained illustration; not currently rendered. |
+| `gallery-walk.webp` | Retained illustration; not currently rendered. |
+| `gallery-guests.webp` | Retained illustration; not currently rendered. |
+| `gallery-details.webp` | Retained illustration; not currently rendered. |
+| `gallery-evening.webp` | Retained illustration; not currently rendered. |
 | `icons/*.svg` | Deterministic timeline illustrations. |
 
 The characters, palette, line weight, flowers, and architectural treatment must remain consistent across every raster asset. See [the image quality guide](image-quality-guide.md) before producing or replacing images.
 
 ## Acceptance checklist
 
-- The invitation still renders without `afterWedding`.
+- The memory page renders without any mode parameter.
+- The invitation still renders with `?invitation`, unless `afterWedding` is also present.
 - All three supported parameter examples render the memory page.
 - No invitation form behavior runs on the memory page.
 - The timer uses the correct timestamp and Russian plural forms.
-- All six blocks remain visually coherent.
+- All seven blocks remain visually coherent.
 - Text is selectable HTML.
 - No illustration contains readable generated text or watermarks.
 - The story scene is fully visible on desktop and mobile.
-- Gallery crops keep faces, hands, rings, and bouquets inside safe areas.
+- Wedding media clearly states that professional photos and video are pending.
+- Guest photos, the wedding ransom film, and the trip film use the supplied links. The private honeymoon photo album is not linked.
 - Desktop and mobile section snapshots have been inspected individually.

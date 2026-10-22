@@ -10,7 +10,7 @@ async function freezeClock(page: Page, time: Date) {
 
 test("invitation countdown runs after the dynamic import", async ({ page }) => {
   await freezeClock(page, beforeWedding);
-  await page.goto("/");
+  await page.goto("/?invitation");
 
   await expect(page.locator(".timer__title")).toHaveText("Начало через");
   await expect(page.locator(".timer__days .timer__number")).toHaveText("5");
@@ -41,7 +41,7 @@ test("post-wedding timer counts from the visit while the wedding is ahead", asyn
 
 test("post-wedding timer counts from the wedding once it has passed", async ({ page }) => {
   await freezeClock(page, new Date("2026-08-27T14:24:35+03:00"));
-  await page.goto("/?afterWedding");
+  await page.goto("/");
 
   await expect(page.locator("[data-after-timer='days']")).toHaveText("2");
   await expect(page.locator("[data-after-timer='hours']")).toHaveText("02");

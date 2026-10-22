@@ -1,7 +1,6 @@
-const isAfterWedding = new URLSearchParams(window.location.search).has("afterWedding");
+const isAfterWedding = document.documentElement.classList.contains("after-wedding-mode");
 
 if (isAfterWedding) {
-  document.title = "Мы поженились!";
   import("./components/after-wedding/index");
 } else {
   Promise.all([

@@ -1,3 +1,23 @@
+mixin afterMediaLink(href, kind, service, title, description, action)
+  a.after-media-link(href=href target="_blank" rel="noopener noreferrer")
+    span.after-media-link__icon(aria-hidden="true")
+      svg(viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round")
+        if kind === "photo"
+          path(d="M11 8l2-3h6l2 3h5a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V11a3 3 0 0 1 3-3z")
+          circle(cx="16" cy="17" r="6")
+          path(d="M24 12h1")
+        else
+          rect(x="3" y="6" width="26" height="20" rx="6")
+          path(d="M13 11l8 5-8 5z")
+    .after-media-link__body
+      span.after-media-link__service= service
+      h3= title
+      p= description
+      span.after-media-link__action
+        span= action
+        svg(aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+          path(d="M5 15L15 5M5 5h10v10")
+
 section.after-hero(aria-labelledby="after-hero-title")
   .after-hero__sparkles(aria-hidden="true")
     span ♡
@@ -49,8 +69,8 @@ section.after-story(aria-labelledby="after-story-title")
       h2#after-story-title Как это было
     .after-story__grid
       .after-story__copy
-        p Этот день начался с лёгкого волнения, сборов и попыток ничего не забыть. Но очень быстро всё стало именно таким, как мы мечтали: тёплым, красивым и по-настоящему нашим.
-        p Мы расписались во Дворце бракосочетания № 2, прокатились по Петербургу вместе с гостями, а потом продолжили праздник в ресторане.
+        p Этот день начался с выкупа и лёгкого волнения. Но очень быстро всё стало именно таким, как мы мечтали: тёплым, красивым и по-настоящему нашим.
+        p После церемонии во Дворце бракосочетания № 2 гости отправились на экскурсию по Петербургу, а мы — на фотосессию по центру. Вечером все снова собрались в ресторане.
         p Было много улыбок, объятий, тёплых слов и маленьких моментов, которые хочется пересматривать снова и снова.
       .after-story__image-wrap
         img.after-story__image(src="./images/after-wedding/story-wedding-day.png" alt="Молодожёны и гости за праздничным столом на фоне Петербурга" width="1536" height="1024" loading="lazy")
@@ -67,23 +87,26 @@ section.after-day(aria-labelledby="after-day-title")
       article.after-day-card
         span.after-day-card__number 1
         img.after-day-card__illustration(src="./images/after-wedding/timeline/preparations.png" alt="" width="724" height="543" loading="lazy")
-        h3 Сборы
-        p Утро, цветы и последние приготовления
+        h3 Выкуп
+        p Наш день начался с выкупа — его можно пересмотреть в небольшом фильме.
+        a.after-day-card__link(href="https://vkvideo.ru/video99003586_456239214" target="_blank" rel="noopener noreferrer")
+          span Смотреть фильм о выкупе
+          span(aria-hidden="true") ↗
       article.after-day-card
         span.after-day-card__number 2
         img.after-day-card__illustration(src="./images/after-wedding/timeline/ceremony.png" alt="" width="724" height="543" loading="lazy")
         h3 Церемония
-        p Самый волнительный момент дня
+        p Во Дворце бракосочетания № 2 мы стали мужем и женой. Самый волнительный момент дня!
       article.after-day-card
         span.after-day-card__number 3
         img.after-day-card__illustration(src="./images/after-wedding/timeline/walk.png" alt="" width="724" height="543" loading="lazy")
-        h3 Прогулка
-        p Петербург, гости и улыбки
+        h3 Экскурсия и фотосессия
+        p Гости отправились на экскурсию по Петербургу, а мы — на фотосессию по центру.
       article.after-day-card
         span.after-day-card__number 4
         img.after-day-card__illustration(src="./images/after-wedding/timeline/restaurant.png" alt="" width="724" height="543" loading="lazy")
         h3 Ресторан
-        p Тёплый вечер в кругу близких
+        p Вкусно поели, от души повеселились и разделили с близкими множество трогательных моментов.
     .after-botanical.after-botanical--bottom(aria-hidden="true")
       span ❧
       span ♥
@@ -96,29 +119,23 @@ section.after-gallery#gallery(aria-labelledby="after-gallery-title")
         span ❧
         span ♥
         span ❧
-      h2#after-gallery-title Фотографии со свадьбы
-      p Немного тёплых кадров с нашего дня — от церемонии до самого уютного вечера.
+      h2#after-gallery-title Свадебные воспоминания
+      p Мы ещё ждём фотографии от фотографа и фильм от видеографа. А пока делимся кадрами от гостей и небольшим фильмом о выкупе.
     .after-gallery__grid
-      figure.after-gallery-card.after-gallery-card--ceremony
-        .after-gallery-card__image
-          img(src="./images/after-wedding/gallery/gallery-ceremony.webp" alt="Молодожёны на церемонии у цветочной арки" width="1672" height="941" loading="lazy")
-        figcaption Церемония
-      figure.after-gallery-card.after-gallery-card--walk
-        .after-gallery-card__image
-          img(src="./images/after-wedding/gallery/gallery-walk.webp" alt="Прогулка молодожёнов по набережной Петербурга" width="1448" height="1086" loading="lazy")
-        figcaption Прогулка
-      figure.after-gallery-card
-        .after-gallery-card__image
-          img(src="./images/after-wedding/gallery/gallery-guests.webp" alt="Молодожёны и гости поднимают бокалы за праздничным столом" width="1448" height="1086" loading="lazy")
-        figcaption Гости
-      figure.after-gallery-card
-        .after-gallery-card__image
-          img(src="./images/after-wedding/gallery/gallery-details.webp" alt="Букет, обручальные кольца и свадебная лента" width="1448" height="1086" loading="lazy")
-        figcaption Детали
-      figure.after-gallery-card
-        .after-gallery-card__image
-          img(src="./images/after-wedding/gallery/gallery-evening.webp" alt="Уютный вечер молодожёнов в ресторане" width="1448" height="1086" loading="lazy")
-        figcaption Вечер
+      +afterMediaLink("https://disk.yandex.ru/d/8Nr-0V__t9Q58Q", "photo", "Яндекс Диск", "Фотографии от гостей", "Наш день глазами самых близких.", "Открыть альбом")
+      +afterMediaLink("https://vkvideo.ru/video99003586_456239214", "video", "VK Видео", "Как проходил выкуп", "Небольшой фильм о начале нашего свадебного дня.", "Смотреть фильм")
+
+section.after-honeymoon#honeymoon(aria-labelledby="after-honeymoon-title")
+  .after-container.after-honeymoon__inner
+    .after-honeymoon__copy
+      .after-botanical(aria-hidden="true")
+        span ❧
+        span ♥
+        span ❧
+      h2#after-honeymoon-title Свадебное путешествие
+      p После свадьбы мы съездили в Южную Корею — на родину Gangnam Style! Делимся небольшим фильмом из нашей поездки.
+    .after-honeymoon__links
+      +afterMediaLink("https://vkvideo.ru/video99003586_456239213", "video", "VK Видео", "Маленький фильм о поездке", "Ещё немного воспоминаний о Южной Корее.", "Смотреть фильм")
 
 section.after-thanks(aria-labelledby="after-thanks-title")
   .after-container.after-thanks__inner
@@ -128,7 +145,7 @@ section.after-thanks(aria-labelledby="after-thanks-title")
       span ❧
     h2#after-thanks-title Спасибо, что были с нами
     p Этот день стал таким тёплым и особенным благодаря людям, которые были рядом.#[br]Мы очень рады, что смогли разделить его с близкими и сохранить эти воспоминания.
-    a.after-thanks__button(href="#gallery") Смотреть все фото
+    a.after-thanks__button(href="#gallery") К фотографиям и фильмам
     .after-ornament.after-ornament--footer(aria-hidden="true")
       span ✧
       span ·

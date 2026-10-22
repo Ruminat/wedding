@@ -8,8 +8,8 @@ This file applies to the entire repository. Read the linked project documents be
 
 ## Product invariants
 
-- The original invitation is still the default experience.
-- The post-wedding page is enabled by the presence of `afterWedding`, including `?afterWedding`, `?afterWedding=true`, and `?afterWedding=1`.
+- The post-wedding page is the default experience. The original invitation is available with `?invitation`.
+- The presence of `afterWedding` always enables the post-wedding page, including `?afterWedding`, `?afterWedding=true`, and `?afterWedding=1`, even when `invitation` is also present.
 - Do not remove, restyle, or change the behavior of the invitation branch unless the task explicitly asks for it.
 - The wedding timestamp is `2026-08-25T12:20:00+03:00`.
 - Post-wedding copy is real HTML text. Never bake headings, captions, dates, or labels into images.
